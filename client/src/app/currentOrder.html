@@ -1,0 +1,31 @@
+<fieldset class="form-group text-left">
+  <legend>Your current order: </legend>
+  <div class="form-group row ">
+
+    <div class="form-check col-sm-12" >
+      <p>Crust type: {{orderService.getCurrentPizza().crust.type}}
+        ${{orderService.getCurrentPizza().crust.price.toFixed(2)}}</p>
+      <p>
+        Toppings:
+      </p>
+      <ul>
+        <li *ngFor = "let topping of orderService.getCurrentPizza().toppings">
+          {{topping.type}} ${{topping.price.toFixed(2)}} <br />
+        </li>
+      </ul>
+      <p>
+        Cheese amount: {{orderService.getCurrentPizza().cheese.type}} ${{orderService.getCurrentPizza().cheese.price.toFixed(2)}}
+      </p>
+      <div class="text-center">
+        <p>
+          Sub-total:
+          <input class="form-control text-center" disabled value= "${{orderService.getCurrentPizza().total.toFixed(2)}}" />
+        </p>
+        <div id="warning1"> </div>
+        <h4>Are you sure you want this pizza?</h4>
+        <button class="btn btn-success" #confirmPizza (click)="addPizza()" >Add Pizza</button>
+      </div>
+
+    </div>
+  </div>
+</fieldset>

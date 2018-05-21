@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pizza Store</title>
+	<meta charset="utf-8" />
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron row">
+      <div class="col-xs-2">
+      </div>
+      <div class="col-xs-2">
+        <a href="./index.html">
+          <img src="../assets/images/logo.png" alt="logo here" height="200" width="200">
+        </a>
+      </div>
+      <div class="col-xs-8 align-middle">
+        <h2 class="text-center">
+          <br><br>
+          Welcome to {{storeName}}
+          <h4>Eat your pizza with a bang!</h4>
+        </h2>
+      </div>
+    </div>
+    <div>
+      <div class="text-center">
+       <h3>Dashboard</h3>
+        <a routerLink="/order">
+        <button type='button' class='btn btn-primary'>New Order</button></a>
+        <a routerLink="/query">
+        <button type='button' class='btn btn-primary'>Find Order</button></a>
+      </div>
+      <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</body>
+</html>

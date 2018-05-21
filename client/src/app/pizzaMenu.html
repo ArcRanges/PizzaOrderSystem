@@ -1,0 +1,60 @@
+<div class = "text-center">
+  <h4>Choose a menu:</h4>
+  <button type="button" class = "btn btn-primary" (click)="loadMenu('pizzaData1')">Menu 1</button>
+  <button type="button" class = "btn btn-primary" (click)="loadMenu('pizzaData2')">Menu 2</button>
+  <hr />
+</div>
+
+  <!-- CRUST TYPE FORM SELECTION -->
+  <form id="crust-form" class = "well well-sm" #crustType (change)="updateCrust(crustType)" (mouseover)="updateOrder()">
+    <fieldset class="form-group">
+    <legend class="text-center">Choose your crust:</legend>
+    <div class="form-group row " *ngFor= "let top of crustOptions">
+      <div class="form-check col-sm-2"></div>
+      <div class="form-check col-sm-6" >
+        <input type="radio" name="crust" value="{{top.type}}">
+        <span>{{top.type}}  </span><br>
+      </div>
+      <div class="form-check col-sm-2">
+        <span>${{top.price.toFixed(2)}}</span>
+      </div>
+      <div class="form-check col-sm-3"></div>
+    </div>
+    </fieldset>
+  </form>
+
+  <!-- TOPPINGS FORM SELECTION -->
+  <form id="topping-form" class = "well well-sm" #topping (keyup)="updateTopping(topping)" (change)="updateTopping(topping)" (click)="updateTopping(topping)" (mouseover)="updateOrder()">
+    <fieldset class="form-group ">
+    <legend class="text-center">Choose your toppings:</legend>
+    <div class="form-group row " *ngFor= "let top of toppingsOptions">
+      <div class="form-check col-sm-2"></div>
+      <div class="form-check col-sm-6" >
+        <input type="number" name="{{top.type}}" min="0" max="99">
+        <span >{{top.type}}</span><br>
+      </div>
+      <div class="form-check col-sm-2">
+        <span>${{top.price.toFixed(2)}}</span>
+      </div>
+      <div class="form-check col-sm-3"></div>
+    </div>
+    </fieldset>
+  </form>
+
+  <!-- CHEESE AMOUNT FORM SELECTION -->
+  <form id="cheese-form" class = "well well-sm" #cheeseType (change)="updateCheeseType(cheeseType)" (mouseover)="updateOrder()">
+    <fieldset class="form-group">
+    <legend class="text-center">Choose your cheese:</legend>
+    <div class="form-group row" *ngFor= "let top of cheeseOptions">
+      <div class="form-check col-sm-2"></div>
+      <div class="form-check col-sm-6" >
+        <input type="radio" name="cheese" value="{{top.type}}">
+        <span >{{top.type}}</span><br>
+      </div>
+      <div class="form-check col-sm-2">
+        <span>${{top.price.toFixed(2)}}</span>
+      </div>
+      <div class="form-check col-sm-3"></div>
+    </div>
+    </fieldset>
+  </form>
